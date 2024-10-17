@@ -13,6 +13,15 @@ header{
   background-color: #136c72;
   padding: 1em 0;
 }
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.nav_item +.nav_item{
+  margin-left: 1em;
+}
 .nav_list{
   padding: 0;
   margin: 0;
@@ -34,6 +43,12 @@ header{
 }
 .nav_link:hover{
   opacity: 0.75;
+}
+.logo{
+  margin-right: 1em;
+}
+.nav_list_primary{
+  margin: 0 auto;
 }
 .nav_item{
   margin-right: 1em;

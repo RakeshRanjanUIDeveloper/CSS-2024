@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+body h1 {
+  font-size: 2em;
+}
+body .secInnerPageNave {
+  background-color: rgb(28, 28, 28);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1028;
+  line-height: 50px;
+}
+body .secInnerPageNave .container {
+  width: 100%;
+  padding: 0;
+}
+body .secInnerPageNave .container .innerPageNave {
+  width: 100%;
+  background: #F6F6F6;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+}
+body .secInnerPageNave .container .innerPageNave ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+body .secInnerPageNave .container .innerPageNave ul li {
+  width: fit-content;
+  padding: 0.3% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.2%;
+}
+body .secInnerPageNave .container .innerPageNave ul li a {
+  position: relative;
+  font-size: 0.92vw;
+  opacity: 1;
+  line-height: 3;
+  color: #000;
+  font-family: "GraphikRegular", sans-serif;
+  text-transform: capitalize;
+  padding: 0 8px;
+  font-weight: 400;
+}
+body .nav-section {
+  display: none;
+  opacity: 0;
+}
+body .nav-section.activeSection {
+  display: block;
+  opacity: 1;
+}
+body .nav-section h2 {
+  position: absolute;
+  top: 10vw;
+}
+
+.min-height {
+  background-color: #bebebe;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-container {
+  position: absolute;
+  top: 16vw;
+}
+.button-container button {
+  width: 100%;
+}
+
+.info {
+  background-color: DarkGray;
+  box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
+  color: #fff;
+}
+
+.alert {
+  background-color: DarkRed;
+  box-shadow: 0 0 1px rgba(139, 0, 0, 0.25);
+  color: #fff;
+}
+
+.success {
+  background-color: darkGreen;
+  box-shadow: 0 0 1px rgba(0, 100, 0, 0.25);
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

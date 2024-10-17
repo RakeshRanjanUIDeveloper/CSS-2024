@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="secInnerPageNave">
+        <div class="container">
+            <nav class="innerPageNave">
+                <ul class="elmHidden elmVisible">
+                    <li>
+                        <a href="#one" data-submenu="InActive" class="showToolTip selected">Banner</a>
+                    </li>
+                    <li>
+                        <a href="#two" data-submenu="InActive" class="showToolTip">Nav One</a>
+                    </li>
+                    <li>
+                        <a href="#three" data-submenu="InActive" class="showToolTip">Nav Two</a>
+                    </li>
+                    <li>
+                        <a href="#four" data-submenu="InActive" class="showToolTip">Nav Three</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="nav-section activeSection" data-nav="#one">
+        <section class="min-height">
+            <div class="container">
+                <h2>Banner</h2>
+                <div class="button-container">
+                    <button type="button" class="info">Info</button>
+                    <button type="button" class="alert">Alert</button>
+                    <button type="button" class="success">Success</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="nav-section" data-nav="#two">
+        <section class="min-height">
+            <div class="container">
+                <h2>Nav One</h2>
+            </div>
+        </section>
+    </div>
+    <div class="nav-section" data-nav="#three">
+        <section class="min-height">
+            <div class="container">
+                <h2>Nav Two</h2>
+            </div>
+        </section>
+    </div>
+    <div class="nav-section" data-nav="#four">
+        <section class="min-height">
+            <div class="container">
+                <h2>Nav Three</h2>
+            </div>
+        </section>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(window).scrollTop(0);
+            $('.innerPageNave li a').on('click', function (e) {
+                // e.preventDefault();
+                var navId = $(this).attr("href");
+                $('.innerPageNave li a').removeClass('selected');
+                $(this).addClass('selected');
+                $('.nav-section').removeClass('activeSection');
+
+                var topMenu = $(".secInnerPageNave");
+                var topMenuHeight = topMenu.outerHeight();
+                var fromTop = $(this).scrollTop() + topMenuHeight - 20;
+                $('html,body').animate({
+                    scrollTop: $('.nav-section[data-nav="' + navId + '"]').offset().top - fromTop
+                }, 0);
+                $('.nav-section[data-nav="' + navId + '"]').addClass('activeSection');
+            });
+
+        });
+    </script>
+</body>
+</html>
